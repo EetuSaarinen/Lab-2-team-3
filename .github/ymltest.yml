@@ -1,4 +1,5 @@
 name: ymltest # The name of the workflow
+
 on: # This action will trigger when an issue is reopened or opened.
   issues:
     types:
@@ -7,6 +8,7 @@ on: # This action will trigger when an issue is reopened or opened.
       - pull_request_target # Add pull_request_target event type to trigger when a pull request is opened
 
 jobs: # The jobs that run in this workflow
+
   label_issues: # the first job is named as label_issues
     runs-on: ubuntu-latest # This job will run on the latest version of Ubuntu.
     permissions: # This job requires write access to issues in order to add labels and comment.
@@ -76,5 +78,7 @@ jobs: # The jobs that run in this workflow
               repo: context.repo.repo,
               body: `**Welcome**, new contributor!
 
-                Please make sure you've read our [contributing guide](CONTRIBUTING.md) and we look forward to reviewing your Pull request shortly ✨`
+Please make sure you've read our [contributing guide](CONTRIBUTING.md) and we look forward to reviewing your Pull request shortly ✨`
             })
+
+           
