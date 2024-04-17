@@ -3,8 +3,6 @@ name: AutomationScript # The name of the workflow
 on: # This action will trigger when an issue is reopened or opened.
   issues:
     types:
-      - reopened
-      - opened
       - closed
       - pull_request_target # Add pull_request_target event type to trigger when a pull request is opened
 
@@ -30,7 +28,7 @@ jobs: # The jobs that run in this workflow
         with:
           issue-number: ${{ github.event.issue.number }} # The issue number is obtained from the context of the event that triggered the action.
           body: | # The body of the comment is a message thanking the user for opening the issue.
-            Thanks for opening this issue! We'll take a look as soon as possible.
+            This issue is now resolved.
 
   comment: # Define a job to comment on pull request targets
     runs-on: ubuntu-latest
